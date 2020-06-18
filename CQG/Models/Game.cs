@@ -50,7 +50,6 @@ namespace CQG.Models
                 Score = 0;
                 Goals = 0;
                 Speed = 0;
-                Health = 4;
                 Health = DEFAULT_HEALTH;
             }
         }
@@ -70,9 +69,7 @@ namespace CQG.Models
             }
 
             foreach (Enemy enemy in Layout.Enemies)
-            {
                 enemy.Tick();
-            }
 
             RemoveInvisibleCars();
 
@@ -141,10 +138,8 @@ namespace CQG.Models
         private void RemoveInvisibleCars()
         {
             for (int i = 0; i < Layout.Enemies.Count; i++)
-            {
                 if (Layout.Enemies[i].LifeTime == 0)
                     Layout.Enemies.RemoveAt(i);
-            }
         }
 
         private void DrawBorders()
@@ -175,39 +170,25 @@ namespace CQG.Models
         private void DrawPlayerCar()
         {
             foreach (Block block in Layout.Player.Blocks)
-            {
                 Layout.BlockIsOccupied[block.X, block.Y] = true;
-            }
         }
 
         private void DrawEnemyCars()
         {
             foreach (Enemy enemy in Layout.Enemies)
-            {
                 foreach (Block block in enemy.Blocks)
-                {
                     if (block.Y >= 0 && block.Y < 20)
                         Layout.BlockIsOccupied[block.X, block.Y] = true;
-                }
-            }
         }
 
         private bool IsCrash()
         {
             foreach (Enemy enemy in Layout.Enemies)
-            {
                 foreach (Block enemyBlock in enemy.Blocks)
-                {
                     foreach (Block playerBlock in Layout.Player.Blocks)
-                    {
                         if (enemyBlock.X == playerBlock.X &&
                             enemyBlock.Y == playerBlock.Y)
-                        {
                             return true;
-                        }
-                    }
-                }
-            }
 
             return false;
         }
@@ -222,12 +203,13 @@ namespace CQG.Models
             }
             catch
             {
-                sr = new StreamReader(File.Create("hiScore.txt"));
+                File.Create("hiScore.txt");
+                return 0;
             }
 
             string line = sr.ReadLine();
             sr.Close();
-            return line == null ? 0 : int.Parse(line);
+            return int.Parse(line);
         }
 
         private void SaveResult(string value)
