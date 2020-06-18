@@ -9,6 +9,8 @@ using System.Drawing;
 using System.Linq;
 using System.Media;
 using System.Reflection;
+using System.Resources;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -58,7 +60,7 @@ namespace CQG
             for (int i = 0; i < 10; i++)
             {
                 DataGridViewImageColumn column = new DataGridViewImageColumn() { Width = 20 };
-                column.Image = Image.FromFile(IMG_PATH + "white.png");
+                column.Image = Properties.Resources.white;
                 layout.Columns.Add(column);
             }
 
@@ -93,11 +95,11 @@ namespace CQG
                     {
                         if (_game.Layout.BlockIsOccupied[i, j])
                         {
-                            layout.Rows[j].Cells[i].Value = Image.FromFile(IMG_PATH + "black.png");
+                            layout.Rows[j].Cells[i].Value = Properties.Resources.black;
                         }
                         else
                         {
-                            layout.Rows[j].Cells[i].Value = Image.FromFile(IMG_PATH + "white.png");
+                            layout.Rows[j].Cells[i].Value = Properties.Resources.white;
                         }
                     }
                 }
