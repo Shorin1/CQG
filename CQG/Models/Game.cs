@@ -49,6 +49,7 @@ namespace CQG.Models
 
                 Score = 0;
                 Goals = 0;
+                Speed = 0;
                 Health = 4;
                 Health = DEFAULT_HEALTH;
             }
@@ -108,7 +109,10 @@ namespace CQG.Models
             }
 
             if (Goals == 50 && Speed != 10)
+            {
                 Speed++;
+                Goals = 0;
+            }
 
             Layout.Clear();
             DrawBorders();

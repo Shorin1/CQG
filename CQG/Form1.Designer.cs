@@ -1,6 +1,6 @@
 ﻿namespace CQG
 {
-    partial class Form1
+    partial class CarRacing
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.layout = new System.Windows.Forms.DataGridView();
-            this.goalLabel = new System.Windows.Forms.Label();
             this.speedLabel = new System.Windows.Forms.Label();
             this.scoreLabel = new System.Windows.Forms.Label();
             this.hiScoreLabel = new System.Windows.Forms.Label();
             this.healthLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.goalLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.layout)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,20 +61,11 @@
             this.layout.TabIndex = 0;
             this.layout.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
             // 
-            // goalLabel
-            // 
-            this.goalLabel.AutoSize = true;
-            this.goalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.goalLabel.Location = new System.Drawing.Point(297, 308);
-            this.goalLabel.Name = "goalLabel";
-            this.goalLabel.Size = new System.Drawing.Size(0, 16);
-            this.goalLabel.TabIndex = 1;
-            // 
             // speedLabel
             // 
             this.speedLabel.AutoSize = true;
             this.speedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.speedLabel.Location = new System.Drawing.Point(313, 254);
+            this.speedLabel.Location = new System.Drawing.Point(303, 255);
             this.speedLabel.Name = "speedLabel";
             this.speedLabel.Size = new System.Drawing.Size(0, 16);
             this.speedLabel.TabIndex = 2;
@@ -92,7 +83,7 @@
             // 
             this.hiScoreLabel.AutoSize = true;
             this.hiScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.hiScoreLabel.Location = new System.Drawing.Point(297, 100);
+            this.hiScoreLabel.Location = new System.Drawing.Point(303, 101);
             this.hiScoreLabel.Name = "hiScoreLabel";
             this.hiScoreLabel.Size = new System.Drawing.Size(0, 16);
             this.hiScoreLabel.TabIndex = 4;
@@ -116,7 +107,16 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Health";
             // 
-            // Form1
+            // goalLabel
+            // 
+            this.goalLabel.AutoSize = true;
+            this.goalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.goalLabel.Location = new System.Drawing.Point(297, 308);
+            this.goalLabel.Name = "goalLabel";
+            this.goalLabel.Size = new System.Drawing.Size(0, 16);
+            this.goalLabel.TabIndex = 1;
+            // 
+            // CarRacing
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::CQG.Properties.Resources.bg;
@@ -134,7 +134,7 @@
             this.MaximumSize = new System.Drawing.Size(420, 498);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(420, 498);
-            this.Name = "Form1";
+            this.Name = "CarRacing";
             this.Text = "Brick game - Car Racing";
             ((System.ComponentModel.ISupportInitialize)(this.layout)).EndInit();
             this.ResumeLayout(false);
@@ -145,12 +145,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView layout;
-        private System.Windows.Forms.Label goalLabel;
         private System.Windows.Forms.Label speedLabel;
         private System.Windows.Forms.Label scoreLabel;
         private System.Windows.Forms.Label hiScoreLabel;
         private System.Windows.Forms.Label healthLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label goalLabel;
     }
 }
 

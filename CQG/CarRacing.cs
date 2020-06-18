@@ -20,7 +20,7 @@ using WMPLib;
 
 namespace CQG
 {
-    public partial class Form1 : Form
+    public partial class CarRacing : Form
     {
 
         private const string IMG_PATH = @"Img\";
@@ -28,7 +28,7 @@ namespace CQG
         private readonly Game _game = new Game();
         private readonly Thread _gameThread;
 
-        public Form1()
+        public CarRacing()
         {
             InitializeComponent();
             Application.ApplicationExit += new EventHandler(OnApplicationExit);
@@ -138,7 +138,7 @@ namespace CQG
                 for (int j = 0; j < 10; j++)
                 {
                     Thread.Sleep(5);
-                    layout.Rows[i].Cells[j].Value = Image.FromFile(IMG_PATH + "black.png");
+                    layout.Rows[i].Cells[j].Value = Properties.Resources.black;
                 }
             }
         }
