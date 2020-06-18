@@ -209,7 +209,7 @@ namespace CQG.Models
 
             string line = sr.ReadLine();
             sr.Close();
-            return int.Parse(line);
+            return line == null ?  0 : int.Parse(line);
         }
 
         private void SaveResult(string value)
